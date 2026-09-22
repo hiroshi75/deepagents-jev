@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
 from benchmarks.code_quality import grade, question
@@ -73,8 +74,22 @@ def main() -> None:
         report["models"][model] = {"methods": methods, "artifacts": artifacts}
     if args.verify:
         reference = json.loads((ROOT / "experiments/summary/final-artifacts.json").read_text())
-        if report != reference:
-            raise ValueError("Final-artifact results differ from the published evidence")
+        # Python 3.12 changed float summation. Preserve exact artifact checks while
+        # allowing sub-cent rounding differences in usage-based cost aggregation.
+        for model, actual in report["models"].items():
+            expected = reference["models"][model]
+            if actual["artifacts"] != expected["artifacts"]:
+                raise ValueError(f"Final-artifact execution differs from publication: {model}")
+            for method, metrics in actual["methods"].items():
+                for key, value in metrics.items():
+                    published = expected["methods"][method][key]
+                    equal = (
+                        math.isclose(value, published, rel_tol=1e-12, abs_tol=1e-12)
+                        if isinstance(value, float) and isinstance(published, float)
+                        else value == published
+                    )
+                    if not equal:
+                        raise ValueError(f"Published metric differs: {model}/{method}/{key}")
     write_json(args.output, report)
     print(json.dumps({m: d["methods"] for m, d in report["models"].items()}, indent=2))
 
