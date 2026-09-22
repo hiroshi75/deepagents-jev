@@ -33,3 +33,20 @@ The saved code, expected/actual test outputs, raw API responses, and costs are
 included in `experiments/recorded/end-to-end/` and
 [final-artifacts.json](final-artifacts.json).
 
+
+## Cached continuation: turns 2–3 only
+
+The existing three-turn results above include the initial summary call. The following
+table excludes turn 1 for every method; it is a slice of the same recorded experiment.
+
+|Model|Cached full context|JEV|Reused summary|JEV savings vs. cached full context|
+|---|---:|---:|---:|---:|
+|glm-5.3|$0.175284|$0.056046|$0.016794|68.0%|
+|claude-opus-4-8|$0.628947|$0.182803|$0.106417|70.9%|
+
+Full-context cache-hit fractions were 99.48% (GLM) and 99.56% (Opus). All three
+methods passed 8/8 artifacts and 256/256 functional checks per model in this slice.
+Reused summaries were the least expensive method on these continuation turns.
+These numbers do not establish savings over a long session with growing history.
+
+Source: [warm-cache.json](warm-cache.json). Rebuild with `python -m benchmarks.warm_cache_report`.

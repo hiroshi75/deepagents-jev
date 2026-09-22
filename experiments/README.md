@@ -170,3 +170,24 @@ Publication metadata note: the follow-up runner initially inherited GLM pricing
 and temperature labels in its Opus manifests. Those manifest labels were corrected
 to match the actual request bodies and pricing function before publication. Raw
 requests, responses, generated artifacts, and measured costs were unchanged.
+
+## 4. Separate startup and cached continuation costs
+
+```sh
+uv run --no-sync python -m benchmarks.warm_cache_report
+uv run --no-sync python -m benchmarks.readme_chart
+uv run --no-sync python -m benchmarks.warm_cache_chart
+```
+
+`warm-cache.json` splits the same executable-artifact experiment into turn 1,
+turns 2–3, and all three turns. No new API calls are made. Costs are recalculated
+from raw provider responses, including JEV scoring; the continuation slice excludes
+all first-turn costs for every method. The cache-hit fraction uses answer-model
+cache-read tokens divided by all answer-model input tokens (including cache writes).
+Correctness counts use the saved functional grades, independently re-executed by
+`end_to_end_report --verify`. The charts read the committed summary JSON files.
+
+The full-history continuation cache-hit fractions are 99.48% (GLM) and 99.56% (Opus).
+JEV costs 68.0% and 70.9% less than cached full context in that slice, respectively.
+Reused summaries are cheaper than JEV on these turns. This is a two-turn continuation
+slice, not a separately pre-warmed run or an estimate of steady-state/long-session costs.

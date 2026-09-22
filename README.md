@@ -3,9 +3,23 @@
 **Choose relevant original context instead of generating a summary.** A small,
 reversible context-selection middleware for [LangChain Deep Agents](https://github.com/langchain-ai/deepagents), powered by [TypeSafe JEV](https://docs.typesafe.ai/models).
 
+**All 3 turns, including initial summary generation — versus summarization.**
+
 [![Final-output benchmark: JEV cut costs by 83.9% on GLM-5.3 and 91.8% on Opus 4.8. Both methods produced 12/12 correct artifacts per model, each passing 32 functional tests.](docs/assets/final-output-cost.svg)](https://context-selection-field-notes.ayukawa-hiroshi.chatgpt.site/#quality)
 
 Measured on a constrained Python-generation task; includes cache and JEV fees.
+The percentages above include the initial summary cost. They are **not** savings
+against an already-cached full history.
+
+**Continuation only (turns 2–3) — versus cached full context.**
+
+[![With about 99.5% full-context cache hits, JEV reduced continuation costs by 68.0% for GLM and 70.9% for Opus. Reused summaries were cheaper than both. All three methods passed 8/8 artifacts per model.](docs/assets/warm-cache-cost.svg)](https://context-selection-field-notes.ayukawa-hiroshi.chatgpt.site/#warm-cache)
+
+These are the same recorded runs, with the first turn excluded for every method.
+**Reused summaries were cheapest on these follow-up turns.** JEV beat cached full
+context, but did not beat an already-created summary. A longer session with growing
+history and repeated summarization could have a different cost balance.
+
 [Inspect the results](experiments/summary/FINAL_ARTIFACTS.md) ·
 [Reproduce the experiment](experiments/README.md#3-evaluate-the-final-executable-artifact)
 

@@ -57,9 +57,9 @@ def main() -> None:
   </style>
   <rect width="1200" height="832" rx="24" fill="#f6f5ed"/>
   <rect x="40" y="37" width="9" height="20" rx="2" fill="#147d65"/>
-  <text x="62" y="54" class="eyebrow">DEEPAGENTS + JEV / MEASURED RESULTS</text>
+  <text x="62" y="54" class="eyebrow">ALL 3 TURNS / INCLUDING INITIAL SUMMARY GENERATION</text>
   <text x="40" y="121" class="headline">Smaller context. Lower cost.</text>
-  <text x="40" y="163" class="body">Generate working Python from long histories — then execute it to check correctness.</text>
+  <text x="40" y="163" class="body">Total cost vs. summarization, including its first summary call. Final code tested.</text>
 """
         + "".join(cards)
         + """

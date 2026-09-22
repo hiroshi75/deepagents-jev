@@ -18,4 +18,5 @@ jobs:
       - run: uv run --no-sync python -m benchmarks.report --verify
       - run: uv run --no-sync python -m benchmarks.quality
       - run: uv run --no-sync python -m benchmarks.end_to_end_report --verify
+      - run: uv run --no-sync python -m benchmarks.warm_cache_report
       - run: uv build
