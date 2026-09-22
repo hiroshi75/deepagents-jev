@@ -3,6 +3,12 @@
 **Choose relevant original context instead of generating a summary.** A small,
 reversible context-selection middleware for [LangChain Deep Agents](https://github.com/langchain-ai/deepagents), powered by [TypeSafe JEV](https://docs.typesafe.ai/models).
 
+[![Final-output benchmark: JEV cut costs by 83.9% on GLM-5.3 and 91.8% on Opus 4.8. Both methods produced 12/12 correct artifacts per model, each passing 32 functional tests.](docs/assets/final-output-cost.svg)](https://context-selection-field-notes.ayukawa-hiroshi.chatgpt.site/#quality)
+
+Measured on a constrained Python-generation task; includes cache and JEV fees.
+[Inspect the results](experiments/summary/FINAL_ARTIFACTS.md) ·
+[Reproduce the experiment](experiments/README.md#3-evaluate-the-final-executable-artifact)
+
 JEV scores older conversation fragments against the current task. The middleware
 sends selected original messages to your chat model while keeping the complete
 history in the checkpoint. A fragment omitted now can return for a later question.
