@@ -1,0 +1,205 @@
+{
+  "condition": "summarization",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```json\n{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 22.161299249972217,
+      "estimated_usd": 0.50819075,
+      "uncached_usd": 0.523235
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```json\n{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 5.103203250037041,
+      "estimated_usd": 0.0052645,
+      "uncached_usd": 0.02986
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```json\n{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.657295792014338,
+      "estimated_usd": 0.0053175,
+      "uncached_usd": 0.030615
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "summary",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 92046,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1358,
+        "output_tokens_details": {
+          "thinking_tokens": 45
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 19.942465458996594,
+      "estimated_usd": 0.49418,
+      "uncached_usd": 0.49418,
+      "raw_file": "call_001_anthropic_summary.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 2,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1695,
+        "cache_read_input_tokens": 3814,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1695,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 60,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 2.2065031660022214,
+      "estimated_usd": 0.01401075,
+      "uncached_usd": 0.029055,
+      "raw_file": "call_002_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 3,
+      "condition": "summarization",
+      "turn": 2,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 156,
+        "cache_read_input_tokens": 5509,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 156,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 61,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 5.098890083027072,
+      "estimated_usd": 0.0052645,
+      "uncached_usd": 0.02986,
+      "raw_file": "call_003_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 4,
+      "condition": "summarization",
+      "turn": 3,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 156,
+        "cache_read_input_tokens": 5665,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 156,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 60,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.6519632079871371,
+      "estimated_usd": 0.0053175,
+      "uncached_usd": 0.030615,
+      "raw_file": "call_004_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    }
+  ],
+  "elapsed_seconds": 28.922429582977202,
+  "estimated_usd": 0.51877275,
+  "uncached_usd": 0.5837100000000001,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": []
+}

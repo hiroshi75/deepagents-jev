@@ -1,0 +1,1805 @@
+{
+  "condition": "jev",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 6.4893545839586295,
+      "estimated_usd": 0.003337444,
+      "uncached_usd": 0.003410404
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 7.08297029096866,
+      "estimated_usd": 0.00362106,
+      "uncached_usd": 0.00369402
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 6.711526291968767,
+      "estimated_usd": 0.003668676,
+      "uncached_usd": 0.003741636
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4913,
+        "output_tokens": 76
+      },
+      "elapsed_seconds": 0.6674246669863351,
+      "estimated_usd": 0.000206346,
+      "uncached_usd": 0.000206346,
+      "raw_file": "call_001_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 2,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3893,
+        "output_tokens": 60
+      },
+      "elapsed_seconds": 0.23409474996151403,
+      "estimated_usd": 0.000163506,
+      "uncached_usd": 0.000163506,
+      "raw_file": "call_002_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 3,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3661,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21507283300161362,
+      "estimated_usd": 0.000153762,
+      "uncached_usd": 0.000153762,
+      "raw_file": "call_003_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 4,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4685,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.23441708396421745,
+      "estimated_usd": 0.00019677,
+      "uncached_usd": 0.00019677,
+      "raw_file": "call_004_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 5,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3895,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23256291600409895,
+      "estimated_usd": 0.00016359,
+      "uncached_usd": 0.00016359,
+      "raw_file": "call_005_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 6,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3881,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21724749996792525,
+      "estimated_usd": 0.000163002,
+      "uncached_usd": 0.000163002,
+      "raw_file": "call_006_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 7,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3877,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.3261066669947468,
+      "estimated_usd": 0.000162834,
+      "uncached_usd": 0.000162834,
+      "raw_file": "call_007_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 8,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4045,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2320066670072265,
+      "estimated_usd": 0.00016989000000000001,
+      "uncached_usd": 0.00016989000000000001,
+      "raw_file": "call_008_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 9,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3897,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.20356741698924452,
+      "estimated_usd": 0.00016367400000000002,
+      "uncached_usd": 0.00016367400000000002,
+      "raw_file": "call_009_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 10,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3600,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.27697141602402553,
+      "estimated_usd": 0.00015120000000000002,
+      "uncached_usd": 0.00015120000000000002,
+      "raw_file": "call_010_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 11,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3317,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2339861660148017,
+      "estimated_usd": 0.00013931400000000003,
+      "uncached_usd": 0.00013931400000000003,
+      "raw_file": "call_011_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 12,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3323,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19207645795540884,
+      "estimated_usd": 0.000139566,
+      "uncached_usd": 0.000139566,
+      "raw_file": "call_012_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 13,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3297,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19549958303105086,
+      "estimated_usd": 0.00013847400000000003,
+      "uncached_usd": 0.00013847400000000003,
+      "raw_file": "call_013_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 14,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3608,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2734162919805385,
+      "estimated_usd": 0.000151536,
+      "uncached_usd": 0.000151536,
+      "raw_file": "call_014_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 15,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3326,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2103693750104867,
+      "estimated_usd": 0.00013969200000000002,
+      "uncached_usd": 0.00013969200000000002,
+      "raw_file": "call_015_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 16,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3364,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21937566698761657,
+      "estimated_usd": 0.00014128800000000002,
+      "uncached_usd": 0.00014128800000000002,
+      "raw_file": "call_016_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 17,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4874,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.20985829102573916,
+      "estimated_usd": 0.00020470800000000003,
+      "uncached_usd": 0.00020470800000000003,
+      "raw_file": "call_017_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 18,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2306,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19768608402227983,
+      "estimated_usd": 9.6852e-05,
+      "uncached_usd": 9.6852e-05,
+      "raw_file": "call_018_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 19,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 43,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 268,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 311
+      },
+      "elapsed_seconds": 1.8799004169995897,
+      "estimated_usd": 0.0004914399999999999,
+      "uncached_usd": 0.0005644,
+      "raw_file": "call_019_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 20,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4970,
+        "output_tokens": 76
+      },
+      "elapsed_seconds": 0.7413091670023277,
+      "estimated_usd": 0.00020874,
+      "uncached_usd": 0.00020874,
+      "raw_file": "call_020_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 21,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3950,
+        "output_tokens": 60
+      },
+      "elapsed_seconds": 0.25710837496444583,
+      "estimated_usd": 0.0001659,
+      "uncached_usd": 0.0001659,
+      "raw_file": "call_021_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 22,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3718,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24521345901302993,
+      "estimated_usd": 0.00015615600000000001,
+      "uncached_usd": 0.00015615600000000001,
+      "raw_file": "call_022_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 23,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4742,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2426073329988867,
+      "estimated_usd": 0.00019916400000000002,
+      "uncached_usd": 0.00019916400000000002,
+      "raw_file": "call_023_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 24,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3952,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24186095799086615,
+      "estimated_usd": 0.00016598400000000002,
+      "uncached_usd": 0.00016598400000000002,
+      "raw_file": "call_024_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 25,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3938,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19923141598701477,
+      "estimated_usd": 0.00016539600000000003,
+      "uncached_usd": 0.00016539600000000003,
+      "raw_file": "call_025_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 26,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3934,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.20522904198151082,
+      "estimated_usd": 0.000165228,
+      "uncached_usd": 0.000165228,
+      "raw_file": "call_026_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 27,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4102,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.32819124998059124,
+      "estimated_usd": 0.00017228400000000003,
+      "uncached_usd": 0.00017228400000000003,
+      "raw_file": "call_027_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 28,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3954,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2224894579849206,
+      "estimated_usd": 0.000166068,
+      "uncached_usd": 0.000166068,
+      "raw_file": "call_028_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 29,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3657,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24542724998900667,
+      "estimated_usd": 0.00015359400000000003,
+      "uncached_usd": 0.00015359400000000003,
+      "raw_file": "call_029_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 30,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3374,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23641712497919798,
+      "estimated_usd": 0.000141708,
+      "uncached_usd": 0.000141708,
+      "raw_file": "call_030_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 31,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3380,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19165712496032938,
+      "estimated_usd": 0.00014196,
+      "uncached_usd": 0.00014196,
+      "raw_file": "call_031_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 32,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3354,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2603652499965392,
+      "estimated_usd": 0.000140868,
+      "uncached_usd": 0.000140868,
+      "raw_file": "call_032_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 33,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3665,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2522309580235742,
+      "estimated_usd": 0.00015393,
+      "uncached_usd": 0.00015393,
+      "raw_file": "call_033_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 34,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3383,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.20515616703778505,
+      "estimated_usd": 0.000142086,
+      "uncached_usd": 0.000142086,
+      "raw_file": "call_034_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 35,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3421,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.19716558296931908,
+      "estimated_usd": 0.000143682,
+      "uncached_usd": 0.000143682,
+      "raw_file": "call_035_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 36,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4931,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.23189495800761506,
+      "estimated_usd": 0.000207102,
+      "uncached_usd": 0.000207102,
+      "raw_file": "call_036_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 37,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2585,
+        "output_tokens": 80
+      },
+      "elapsed_seconds": 0.21042883401969448,
+      "estimated_usd": 0.00010857000000000001,
+      "uncached_usd": 0.00010857000000000001,
+      "raw_file": "call_037_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 38,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 72,
+        "completion_tokens_details": {
+          "reasoning_tokens": 28
+        },
+        "prompt_tokens": 342,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 414
+      },
+      "elapsed_seconds": 2.3455949159688316,
+      "estimated_usd": 0.00072264,
+      "uncached_usd": 0.0007955999999999999,
+      "raw_file": "call_038_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 39,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 5027,
+        "output_tokens": 76
+      },
+      "elapsed_seconds": 0.6328522500116378,
+      "estimated_usd": 0.000211134,
+      "uncached_usd": 0.000211134,
+      "raw_file": "call_039_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 40,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4007,
+        "output_tokens": 60
+      },
+      "elapsed_seconds": 0.24485987500520423,
+      "estimated_usd": 0.000168294,
+      "uncached_usd": 0.000168294,
+      "raw_file": "call_040_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 41,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3775,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21438799996394664,
+      "estimated_usd": 0.00015855,
+      "uncached_usd": 0.00015855,
+      "raw_file": "call_041_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 42,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4799,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.23904820799361914,
+      "estimated_usd": 0.000201558,
+      "uncached_usd": 0.000201558,
+      "raw_file": "call_042_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 43,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4009,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2151707499870099,
+      "estimated_usd": 0.000168378,
+      "uncached_usd": 0.000168378,
+      "raw_file": "call_043_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 44,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3995,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23202674998901784,
+      "estimated_usd": 0.00016779000000000002,
+      "uncached_usd": 0.00016779000000000002,
+      "raw_file": "call_044_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 45,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3991,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.20803770801285282,
+      "estimated_usd": 0.000167622,
+      "uncached_usd": 0.000167622,
+      "raw_file": "call_045_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 46,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4159,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2481613329728134,
+      "estimated_usd": 0.000174678,
+      "uncached_usd": 0.000174678,
+      "raw_file": "call_046_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 47,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4011,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.26904816599562764,
+      "estimated_usd": 0.00016846200000000003,
+      "uncached_usd": 0.00016846200000000003,
+      "raw_file": "call_047_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 48,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3714,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21758925000904128,
+      "estimated_usd": 0.000155988,
+      "uncached_usd": 0.000155988,
+      "raw_file": "call_048_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 49,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3431,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.32946583395823836,
+      "estimated_usd": 0.000144102,
+      "uncached_usd": 0.000144102,
+      "raw_file": "call_049_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 50,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3437,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24269799998728558,
+      "estimated_usd": 0.00014435400000000002,
+      "uncached_usd": 0.00014435400000000002,
+      "raw_file": "call_050_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 51,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3411,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2958864590036683,
+      "estimated_usd": 0.000143262,
+      "uncached_usd": 0.000143262,
+      "raw_file": "call_051_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 52,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3722,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.20291883300524205,
+      "estimated_usd": 0.000156324,
+      "uncached_usd": 0.000156324,
+      "raw_file": "call_052_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 53,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3440,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24910600000293925,
+      "estimated_usd": 0.00014448000000000003,
+      "uncached_usd": 0.00014448000000000003,
+      "raw_file": "call_053_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 54,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3478,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23812850000103936,
+      "estimated_usd": 0.00014607600000000003,
+      "uncached_usd": 0.00014607600000000003,
+      "raw_file": "call_054_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 55,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4988,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.22089966596104205,
+      "estimated_usd": 0.00020949600000000001,
+      "uncached_usd": 0.00020949600000000001,
+      "raw_file": "call_055_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 56,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 2864,
+        "output_tokens": 118
+      },
+      "elapsed_seconds": 0.20774245803477243,
+      "estimated_usd": 0.00012028800000000001,
+      "uncached_usd": 0.00012028800000000001,
+      "raw_file": "call_056_jev_selection.json",
+      "http_status": 200
+    },
+    {
+      "call": 57,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 48,
+        "completion_tokens_details": {
+          "reasoning_tokens": 5
+        },
+        "prompt_tokens": 414,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 462
+      },
+      "elapsed_seconds": 1.9808451249846257,
+      "estimated_usd": 0.00071784,
+      "uncached_usd": 0.0007907999999999999,
+      "raw_file": "call_057_zai_answer.json",
+      "http_status": 200
+    }
+  ],
+  "elapsed_seconds": 20.285123791953083,
+  "estimated_usd": 0.01062718,
+  "uncached_usd": 0.010846060000000001,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": [
+    {
+      "before_tokens": 61074,
+      "after_tokens": 325,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_11",
+        "fragment_86",
+        "fragment_87",
+        "fragment_88",
+        "fragment_89",
+        "fragment_90",
+        "fragment_91"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_13",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_41",
+        "fragment_43",
+        "fragment_45",
+        "fragment_47",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_67",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_77",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.03
+        ],
+        [
+          "fragment_3",
+          0.03
+        ],
+        [
+          "fragment_5",
+          0.03
+        ],
+        [
+          "fragment_7",
+          0.03
+        ],
+        [
+          "fragment_9",
+          0.03
+        ],
+        [
+          "fragment_11",
+          0.98
+        ],
+        [
+          "fragment_13",
+          0.03
+        ],
+        [
+          "fragment_15",
+          0.03
+        ],
+        [
+          "fragment_17",
+          0.03
+        ],
+        [
+          "fragment_19",
+          0.03
+        ],
+        [
+          "fragment_21",
+          0.03
+        ],
+        [
+          "fragment_23",
+          0.03
+        ],
+        [
+          "fragment_25",
+          0.04
+        ],
+        [
+          "fragment_27",
+          0.03
+        ],
+        [
+          "fragment_29",
+          0.03
+        ],
+        [
+          "fragment_31",
+          0.04
+        ],
+        [
+          "fragment_33",
+          0.05
+        ],
+        [
+          "fragment_35",
+          0.05
+        ],
+        [
+          "fragment_37",
+          0.04
+        ],
+        [
+          "fragment_39",
+          0.04
+        ],
+        [
+          "fragment_41",
+          0.11
+        ],
+        [
+          "fragment_43",
+          0.05
+        ],
+        [
+          "fragment_45",
+          0.04
+        ],
+        [
+          "fragment_47",
+          0.04
+        ],
+        [
+          "fragment_49",
+          0.03
+        ],
+        [
+          "fragment_51",
+          0.04
+        ],
+        [
+          "fragment_53",
+          0.04
+        ],
+        [
+          "fragment_55",
+          0.04
+        ],
+        [
+          "fragment_57",
+          0.04
+        ],
+        [
+          "fragment_59",
+          0.04
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.03
+        ],
+        [
+          "fragment_65",
+          0.03
+        ],
+        [
+          "fragment_67",
+          0.08
+        ],
+        [
+          "fragment_69",
+          0.03
+        ],
+        [
+          "fragment_71",
+          0.03
+        ],
+        [
+          "fragment_73",
+          0.03
+        ],
+        [
+          "fragment_75",
+          0.03
+        ],
+        [
+          "fragment_77",
+          0.03
+        ],
+        [
+          "fragment_79",
+          0.03
+        ],
+        [
+          "fragment_81",
+          0.04
+        ],
+        [
+          "fragment_83",
+          0.04
+        ],
+        [
+          "fragment_85",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    },
+    {
+      "before_tokens": 61180,
+      "after_tokens": 389,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_41",
+        "fragment_88",
+        "fragment_89",
+        "fragment_90",
+        "fragment_91",
+        "fragment_92",
+        "fragment_93"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_11",
+        "fragment_13",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_43",
+        "fragment_45",
+        "fragment_47",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_67",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_77",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85",
+        "fragment_86",
+        "fragment_87"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.03
+        ],
+        [
+          "fragment_3",
+          0.04
+        ],
+        [
+          "fragment_5",
+          0.03
+        ],
+        [
+          "fragment_7",
+          0.03
+        ],
+        [
+          "fragment_9",
+          0.04
+        ],
+        [
+          "fragment_11",
+          0.15
+        ],
+        [
+          "fragment_13",
+          0.04
+        ],
+        [
+          "fragment_15",
+          0.04
+        ],
+        [
+          "fragment_17",
+          0.04
+        ],
+        [
+          "fragment_19",
+          0.04
+        ],
+        [
+          "fragment_21",
+          0.04
+        ],
+        [
+          "fragment_23",
+          0.04
+        ],
+        [
+          "fragment_25",
+          0.04
+        ],
+        [
+          "fragment_27",
+          0.04
+        ],
+        [
+          "fragment_29",
+          0.04
+        ],
+        [
+          "fragment_31",
+          0.04
+        ],
+        [
+          "fragment_33",
+          0.06
+        ],
+        [
+          "fragment_35",
+          0.05
+        ],
+        [
+          "fragment_37",
+          0.05
+        ],
+        [
+          "fragment_39",
+          0.06
+        ],
+        [
+          "fragment_41",
+          0.97
+        ],
+        [
+          "fragment_43",
+          0.06
+        ],
+        [
+          "fragment_45",
+          0.04
+        ],
+        [
+          "fragment_47",
+          0.04
+        ],
+        [
+          "fragment_49",
+          0.04
+        ],
+        [
+          "fragment_51",
+          0.05
+        ],
+        [
+          "fragment_53",
+          0.05
+        ],
+        [
+          "fragment_55",
+          0.05
+        ],
+        [
+          "fragment_57",
+          0.05
+        ],
+        [
+          "fragment_59",
+          0.05
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.04
+        ],
+        [
+          "fragment_65",
+          0.04
+        ],
+        [
+          "fragment_67",
+          0.11
+        ],
+        [
+          "fragment_69",
+          0.04
+        ],
+        [
+          "fragment_71",
+          0.04
+        ],
+        [
+          "fragment_73",
+          0.04
+        ],
+        [
+          "fragment_75",
+          0.04
+        ],
+        [
+          "fragment_77",
+          0.03
+        ],
+        [
+          "fragment_79",
+          0.03
+        ],
+        [
+          "fragment_81",
+          0.04
+        ],
+        [
+          "fragment_83",
+          0.06
+        ],
+        [
+          "fragment_85",
+          0.04
+        ],
+        [
+          "fragment_86",
+          0.04
+        ],
+        [
+          "fragment_87",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    },
+    {
+      "before_tokens": 61286,
+      "after_tokens": 453,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_67",
+        "fragment_90",
+        "fragment_91",
+        "fragment_92",
+        "fragment_93",
+        "fragment_94",
+        "fragment_95"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_11",
+        "fragment_13",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_41",
+        "fragment_43",
+        "fragment_45",
+        "fragment_47",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_77",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85",
+        "fragment_86",
+        "fragment_87",
+        "fragment_88",
+        "fragment_89"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.03
+        ],
+        [
+          "fragment_3",
+          0.04
+        ],
+        [
+          "fragment_5",
+          0.03
+        ],
+        [
+          "fragment_7",
+          0.03
+        ],
+        [
+          "fragment_9",
+          0.04
+        ],
+        [
+          "fragment_11",
+          0.16
+        ],
+        [
+          "fragment_13",
+          0.04
+        ],
+        [
+          "fragment_15",
+          0.04
+        ],
+        [
+          "fragment_17",
+          0.04
+        ],
+        [
+          "fragment_19",
+          0.04
+        ],
+        [
+          "fragment_21",
+          0.04
+        ],
+        [
+          "fragment_23",
+          0.04
+        ],
+        [
+          "fragment_25",
+          0.04
+        ],
+        [
+          "fragment_27",
+          0.04
+        ],
+        [
+          "fragment_29",
+          0.04
+        ],
+        [
+          "fragment_31",
+          0.04
+        ],
+        [
+          "fragment_33",
+          0.06
+        ],
+        [
+          "fragment_35",
+          0.05
+        ],
+        [
+          "fragment_37",
+          0.05
+        ],
+        [
+          "fragment_39",
+          0.06
+        ],
+        [
+          "fragment_41",
+          0.11
+        ],
+        [
+          "fragment_43",
+          0.06
+        ],
+        [
+          "fragment_45",
+          0.04
+        ],
+        [
+          "fragment_47",
+          0.05
+        ],
+        [
+          "fragment_49",
+          0.04
+        ],
+        [
+          "fragment_51",
+          0.05
+        ],
+        [
+          "fragment_53",
+          0.05
+        ],
+        [
+          "fragment_55",
+          0.05
+        ],
+        [
+          "fragment_57",
+          0.05
+        ],
+        [
+          "fragment_59",
+          0.05
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.04
+        ],
+        [
+          "fragment_65",
+          0.04
+        ],
+        [
+          "fragment_67",
+          0.97
+        ],
+        [
+          "fragment_69",
+          0.04
+        ],
+        [
+          "fragment_71",
+          0.04
+        ],
+        [
+          "fragment_73",
+          0.04
+        ],
+        [
+          "fragment_75",
+          0.03
+        ],
+        [
+          "fragment_77",
+          0.04
+        ],
+        [
+          "fragment_79",
+          0.03
+        ],
+        [
+          "fragment_81",
+          0.04
+        ],
+        [
+          "fragment_83",
+          0.05
+        ],
+        [
+          "fragment_85",
+          0.04
+        ],
+        [
+          "fragment_86",
+          0.04
+        ],
+        [
+          "fragment_87",
+          0.04
+        ],
+        [
+          "fragment_88",
+          0.04
+        ],
+        [
+          "fragment_89",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    }
+  ]
+}

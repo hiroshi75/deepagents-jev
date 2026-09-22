@@ -1,0 +1,181 @@
+{
+  "condition": "summarization",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 21.892096666037105,
+      "estimated_usd": 0.15312647999999995,
+      "uncached_usd": 0.16312199999999996
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.6948896249523386,
+      "estimated_usd": 0.0008262800000000001,
+      "uncached_usd": 0.0027962
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+      "grade": {
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 2.2705279999645427,
+      "estimated_usd": 0.0008261599999999999,
+      "uncached_usd": 0.002942
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "zai",
+      "stage": "summary",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 1556,
+        "completion_tokens_details": {
+          "reasoning_tokens": 24
+        },
+        "prompt_tokens": 109727,
+        "prompt_tokens_details": {
+          "cached_tokens": 8768
+        },
+        "total_tokens": 111283
+      },
+      "elapsed_seconds": 20.018335708009545,
+      "estimated_usd": 0.15046867999999997,
+      "uncached_usd": 0.16046419999999997,
+      "raw_file": "call_001_zai_summary.json",
+      "http_status": 200
+    },
+    {
+      "call": 2,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 45,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 1757,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1802
+      },
+      "elapsed_seconds": 1.8613470409763977,
+      "estimated_usd": 0.0026577999999999997,
+      "uncached_usd": 0.0026577999999999997,
+      "raw_file": "call_002_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 3,
+      "condition": "summarization",
+      "turn": 2,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 44,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 1859,
+        "prompt_tokens_details": {
+          "cached_tokens": 1728
+        },
+        "total_tokens": 1903
+      },
+      "elapsed_seconds": 1.6889980420237407,
+      "estimated_usd": 0.0008262800000000001,
+      "uncached_usd": 0.0027962,
+      "raw_file": "call_003_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 4,
+      "condition": "summarization",
+      "turn": 3,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 45,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 1960,
+        "prompt_tokens_details": {
+          "cached_tokens": 1856
+        },
+        "total_tokens": 2005
+      },
+      "elapsed_seconds": 2.265215791994706,
+      "estimated_usd": 0.0008261599999999999,
+      "uncached_usd": 0.002942,
+      "raw_file": "call_004_zai_answer.json",
+      "http_status": 200
+    }
+  ],
+  "elapsed_seconds": 25.8580257089925,
+  "estimated_usd": 0.15477891999999996,
+  "uncached_usd": 0.16886019999999996,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": []
+}

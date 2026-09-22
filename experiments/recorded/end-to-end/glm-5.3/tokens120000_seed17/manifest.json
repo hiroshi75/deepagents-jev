@@ -1,0 +1,28 @@
+{
+  "target_approximate_tokens": 120000,
+  "seed": 17,
+  "actual_approximate_history_tokens": 122926,
+  "dataset_sha256": "6ca99b913209f931a7e2f12f44f81cd9e540ad69822e9fae9d46a0794113e654",
+  "model": "glm-5.3",
+  "reasoning_effort": "low",
+  "temperature": 0,
+  "prices_usd_per_million": {
+    "glm_input": 1.4,
+    "glm_cached": 0.26,
+    "glm_output": 4.4,
+    "jev_input": 0.042
+  },
+  "budget": 16000,
+  "summary_keep_messages": 6,
+  "summary_trim": null,
+  "condition_order": [
+    "summarization",
+    "jev",
+    "full"
+  ],
+  "tools": "schemas present, tool_choice=none; no archive recovery",
+  "task": "executable request-admission policy",
+  "tests_per_artifact": 32,
+  "source_dataset": "tokens120000_seed17/dataset.json",
+  "prompt_caching": "automatic"
+}

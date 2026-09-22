@@ -1,0 +1,205 @@
+{
+  "condition": "summarization",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```json\n{\n  \"lease_seconds\": 201,\n  \"max_payload_bytes\": 179814,\n  \"release_tag\": \"build-462630-ori\",\n  \"owner_team\": \"team-713\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 20.31441712495871,
+      "estimated_usd": 0.93880075,
+      "uncached_usd": 0.9538449999999999
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```json\n{\n  \"lease_seconds\": 277,\n  \"max_payload_bytes\": 735164,\n  \"release_tag\": \"build-402616-lyr\",\n  \"owner_team\": \"team-189\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.6019634589902125,
+      "estimated_usd": 0.00554575,
+      "uncached_usd": 0.03013
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```json\n{\n  \"lease_seconds\": 191,\n  \"max_payload_bytes\": 460516,\n  \"release_tag\": \"build-512001-veg\",\n  \"owner_team\": \"team-526\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.643394000013359,
+      "estimated_usd": 0.00560325,
+      "uncached_usd": 0.03093
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "summary",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 178338,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1315,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 18.60017762501957,
+      "estimated_usd": 0.924565,
+      "uncached_usd": 0.924565,
+      "raw_file": "call_001_anthropic_summary.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 2,
+      "condition": "summarization",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1695,
+        "cache_read_input_tokens": 3814,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1695,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.702261250000447,
+      "estimated_usd": 0.01423575,
+      "uncached_usd": 0.02928,
+      "raw_file": "call_002_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 3,
+      "condition": "summarization",
+      "turn": 2,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 165,
+        "cache_read_input_tokens": 5509,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 165,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 70,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.5966337909922004,
+      "estimated_usd": 0.00554575,
+      "uncached_usd": 0.03013,
+      "raw_file": "call_003_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 4,
+      "condition": "summarization",
+      "turn": 3,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 165,
+        "cache_read_input_tokens": 5674,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 165,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.6377649159985594,
+      "estimated_usd": 0.00560325,
+      "uncached_usd": 0.03093,
+      "raw_file": "call_004_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    }
+  ],
+  "elapsed_seconds": 23.560303332982585,
+  "estimated_usd": 0.9499497499999999,
+  "uncached_usd": 1.014905,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": []
+}

@@ -1,0 +1,28 @@
+{
+  "target_approximate_tokens": 120000,
+  "seed": 17,
+  "actual_approximate_history_tokens": 122926,
+  "dataset_sha256": "6ca99b913209f931a7e2f12f44f81cd9e540ad69822e9fae9d46a0794113e654",
+  "model": "claude-opus-4-8",
+  "reasoning_effort": "low",
+  "temperature": "provider default",
+  "prices_usd_per_million": {
+    "input": 5,
+    "output": 25,
+    "cache_write_5m": 6.25,
+    "cache_write_1h": 10,
+    "cache_read": 0.5,
+    "jev_input": 0.042
+  },
+  "budget": 16000,
+  "summary_keep_messages": 6,
+  "summary_trim": null,
+  "condition_order": [
+    "summarization",
+    "jev",
+    "full"
+  ],
+  "tools": "schemas present, tool_choice=none; no archive recovery",
+  "source_dataset": "results/zai_context_comparison/run1/tokens120000_seed17/dataset.json",
+  "prompt_caching": "Deep Agents native AnthropicPromptCachingMiddleware (5m)"
+}

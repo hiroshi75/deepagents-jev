@@ -1,0 +1,40 @@
+[project]
+name = "deepagents-jev"
+version = "0.1.0"
+description = "Query-aware context selection for Deep Agents, powered by JEV"
+readme = "README.md"
+requires-python = ">=3.11,<4"
+license = "MIT"
+license-files = ["LICENSE", "LICENSES/DeepAgents-MIT.txt", "NOTICE"]
+keywords = ["deepagents", "langchain", "middleware", "jev", "context-management"]
+dependencies = ["deepagents==0.7.16", "httpx>=0.28,<1", "python-dotenv>=1.0,<2"]
+
+[project.urls]
+Repository = "https://github.com/hiroshi75/deepagents-jev"
+Issues = "https://github.com/hiroshi75/deepagents-jev/issues"
+Report = "https://context-selection-field-notes.ayukawa-hiroshi.chatgpt.site"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deepagents_jev"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "benchmarks", "experiments/README.md", "pyproject.toml", "README.md", "LICENSE", "LICENSES", "NOTICE", "docs"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=1", "ruff>=0.15", "ty>=0.0.62"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]

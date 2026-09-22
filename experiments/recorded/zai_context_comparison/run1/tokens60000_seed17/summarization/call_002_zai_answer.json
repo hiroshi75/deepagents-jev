@@ -1,0 +1,323 @@
+{
+  "request": {
+    "model": "glm-5.3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer precisely from the supplied workspace history. Do not invent values."
+      },
+      {
+        "role": "user",
+        "content": "You are in the middle of a conversation that has been summarized.\n\nThe full conversation history has been saved to /conversation_history/session_45fe4edda65f4f809afbf80ea9c809f4.md should you need to refer back to it for details.\n\nA condensed summary follows:\n\n<summary>\n## SESSION INTENT\n\nThe user is investigating a software workspace containing historical `read_file` results: source files from a `deepagents` reference repo and release ledger records (JSON configs). The user explicitly instructed: **keep the ledger's exact configuration values for later questions**, and **no deployment or edits are authorized** — this is a read-only inspection session. Awaiting upcoming questions about the workspace contents.\n\n## SUMMARY\n\nKey facts gathered so far:\n\n**Release ledger records (exact values — preserve verbatim):**\n- `release-ledger/orion-auth.json`: `{\"service\": \"orion-auth\", \"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}`\n- `release-ledger/lyra-search.json`: `{\"service\": \"lyra-search\", \"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}`\n- `release-ledger/vega-export.json`: `{\"service\": \"vega-export\", \"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}`\n\n**Source files read (deepagents repo, `refs/deepagents/libs/deepagents/`):**\n- `backends/langsmith.py` (full): `LangSmithSandbox(BaseSandbox)` — `enable_capture_offload = True`, default timeout 30*60s; `execute`/`aexecute` wrap SDK `run()`; cached async client via `_sandbox._client.to_async()`; `write()` uses SDK native write to avoid ARG_MAX; `read()` fetches bytes via SDK, reproduces base-class pagination (universal newline normalization, base64 for binary capped at `MAX_BINARY_BYTES`, text capped at `MAX_OUTPUT_BYTES` with `TRUNCATION_MSG`); `download_files`/`upload_files` support partial success with error codes (`file_not_found`, `permission_denied`, `is_directory`, `invalid_path`).\n- `backends/protocol.py` (full): `BackendProtocol` (ls/read/grep/glob/write/edit/delete/upload/download, all with async variants via `asyncio.to_thread`); dataclasses `ReadResult` (with `__post_init__` pagination consistency validation), `WriteResult`, `EditResult`, `DeleteResult`, `LsResult`, `GrepResult`, `GlobResult` (with `truncation_reason` Literal \"budget\"/\"unreadable\"/\"transport\"), `ExecuteResponse`, `ExecuteOffloadResult`; constants `DEFAULT_GREP_TIMEOUT=15`, `ASYNC_GREP_TIMEOUT=35`, `ASYNC_GLOB_TIMEOUT=30`; `FileOperationError` literals and named constants (`FILE_NOT_FOUND` etc.); `SandboxBackendProtocol` extends with `execute`/`id`; helpers `_method_accepts_max_count`, `execute_accepts_timeout`, `_supports_delete`, `_apply_grep_max_count`.\n- `middleware/async_subagents.py` (full): `AsyncSubAgentMiddleware` — tools `start_async_task`, `check_async_task`, `update_async_task`, `cancel_async_task`, `list_async_tasks` via LangGraph SDK against Agent Protocol servers; `AsyncTask` TypedDict persisted in `async_tasks` state; `_ClientCache` keyed by (url, headers); default header `x-auth-scheme: langsmith`; terminal statuses `{cancelled, success, error, timeout, interrupted}`; `trace_policy = TracePolicy(process_inputs=omit_payload)`.\n- `middleware/subagents.py` (full): `SubAgent`/`CompiledSubAgent` TypedDicts (modes `isolated`/`fork`, \"handoff\" legacy alias for isolated); `SubAgentMiddleware` builds `task`/`atask` tools; `_build_task_tool`, `create_sub_agent`; `_FORKED_CONTEXT_KEY` guards recursion; `_FORK_TASK_PREAMBLE`; `_EXCLUDED_STATE_KEYS = {messages, todos, structured_response, skills_metadata, _deepagents_forked_context}`; subagent tracing tagged `ls_agent_type=\"subagent\"`; structured_response JSON-serialized into ToolMessage else last non-empty AIMessage text.\n- `middleware/skills.py` (lines 1–202): `SkillsMiddleware` — skills from backend paths with SKILL.md YAML frontmatter; sources layering last-wins; `SkillSource = str | (path, label)`; limits: `MAX_SKILL_FILE_SIZE = 10MB`, name ≤64 chars, description ≤1024 chars, compatibility ≤500 chars, `MAX_SKILLS_LOAD_WARNINGS = 20`.\n- `middleware/_video.py` (full): optional PyAV video frame extraction; constants: `MAX_VIDEO_SAMPLED_FRAMES=64`, `MAX_VIDEO_FRAME_PIXELS=1920*1080`, `MAX_VIDEO_FRAME_SIDE=4096`, output 1920x1080, `MAX_VIDEO_EMITTED_BYTES=4MB`, `MAX_VIDEO_DECODE_SECONDS=10.0`, JPEG quality 85; `VideoExtractionError`; offset/limit interpreted as seconds.\n- `profiles/_builtin_profiles.py` (full): lazy one-shot bootstrap with threading Condition, registers built-in provider profiles (_nvidia, _openai, _openrouter) and harness profiles (_anthropic_opus_4_7, _anthropic_sonnet_4_6, _anthropic_haiku_4_5, _nvidia_nemotron_3_ultra, _openai_codex); entry-point groups `deepagents.provider_profiles` / `deepagents.harness_profiles`; rollback restores registries on failure; `_BOOTSTRAP_HARNESS_KEYS` snapshot distinguishes user registrations.\n- `profiles/harness/harness_profiles.py` (full): `HarnessProfile` (frozen dataclass: base_system_prompt, system_prompt_suffix, tool_description_overrides, excluded_tools, excluded_middleware, extra_middleware, general_purpose_subagent), `HarnessProfileConfig` (declarative YAML/JSON subset, no extra_middleware), `GeneralPurposeSubagentProfile`; scaffolding middleware (`FilesystemMiddleware`, `SubAgentMiddleware`) cannot be excluded; `_HARNESS_PROFILES` registry with exact → provider-prefix → None lookup; `_merge_profiles` (scalars: override wins; sets: union; mappings: override per key; middleware: merge by type replace-in-place); excluded_middleware string grammar (no empty/colon/underscore-prefix entries); `serialized_name` alias for round-trips.\n- `profiles/harness/_anthropic_sonnet_4_6.py`: registers `anthropic:claude-sonnet-4-6` with a system_prompt_suffix containing `<use_parallel_tool_calls>`, `<investigate_before_answering>`, `<tool_result_reflection>` sections; exists as audit anchor — no Sonnet-4.6-specific guidance.\n- `profiles/provider/_openai.py`: registers `openai` ProviderProfile with `init_kwargs={\"use_responses_api\": True}`.\n- `profiles/provider/__init__.py`, `profiles/harness/__init__.py`, `deepagents/__init__.py` (public API: create_deep_agent, middlewares, HarnessProfile(+Config), register_*_profile, SubAgent types, etc.)\n- `_models.py` (full): `resolve_model` via `init_chat_model` + `apply_provider_profile`; `get_model_identifier` (model_name or model attr); `get_model_provider` via `_get_ls_params().ls_provider`; `is_bedrock_model` (provider set + Nova ID prefixes + class names); `model_matches_spec` (identifier match, provider normalized via `_PROVIDER_ALIASES` = {azure_openai: azure, mistralai: mistral}); `_normalize_provider` lowercases and hyphen→underscore.\n\nNo analysis or conclusions have been delivered to the user yet; the session ended at \"Workspace inspection checkpoint 0: awaiting the next request.\"\n\n## ARTIFACTS\n\nRead-only access only. Files read (no modifications):\n- `release-ledger/orion-auth.json`, `release-ledger/lyra-search.json`, `release-ledger/vega-export.json`\n- `refs/deepagents/libs/deepagents/deepagents/backends/langsmith.py`\n- `refs/deepagents/libs/deepagents/deepagents/backends/protocol.py`\n- `refs/deepagents/libs/deepagents/deepagents/middleware/async_subagents.py`\n- `refs/deepagents/libs/deepagents/deepagents/middleware/subagents.py`\n- `refs/deepagents/libs/deepagents/deepagents/middleware/skills.py` (1–202 only; remainder unread)\n- `refs/deepagents/libs/deepagents/deepagents/middleware/_video.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/_builtin_profiles.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/harness/harness_profiles.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/harness/_anthropic_sonnet_4_6.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/harness/__init__.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/provider/__init__.py`\n- `refs/deepagents/libs/deepagents/deepagents/profiles/provider/_openai.py`\n- `refs/deepagents/libs/deepagents/deepagents/__init__.py`\n- `refs/deepagents/libs/deepagents/deepagents/_models.py`\n\n## NEXT STEPS\n\n- Await the user's questions about the workspace (likely about ledger configuration values or deepagents source details).\n- If further source context is needed, unread areas include: rest of `middleware/skills.py` (lines 203+), `backends/sandbox.py`, `backends/utils.py`, `backends/state.py`, `backends/filesystem.py`, `middleware/filesystem.py`, `middleware/summarization.py`, `middleware/memory.py`, `middleware/rubric.py`, `graph.py`, and other harness/provider profile modules (_anthropic_opus_4_7, _anthropic_haiku_4_5, _nvidia_nemotron_3_ultra, _openai_codex, _nvidia, _openrouter).\n- Do not deploy or edit anything; answer questions from gathered context, re-reading files only if more detail is required.\n</summary>"
+      },
+      {
+        "role": "assistant",
+        "content": "Workspace inspection checkpoint 1: awaiting the next request."
+      },
+      {
+        "role": "assistant",
+        "content": "Workspace inspection checkpoint 2: awaiting the next request."
+      },
+      {
+        "role": "assistant",
+        "content": "Workspace inspection checkpoint 3: awaiting the next request."
+      },
+      {
+        "role": "assistant",
+        "content": "Workspace inspection checkpoint 4: awaiting the next request."
+      },
+      {
+        "role": "assistant",
+        "content": "Workspace inspection checkpoint 5: awaiting the next request."
+      },
+      {
+        "role": "user",
+        "content": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing."
+      }
+    ],
+    "thinking": {
+      "type": "enabled"
+    },
+    "reasoning_effort": "low",
+    "temperature": 0,
+    "max_tokens": 2048,
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "ls",
+          "description": "Lists all files in a directory.\n\nThis is useful for exploring the filesystem and finding the right file to read or edit.\nYou should almost ALWAYS use this tool before using the read_file or edit_file tools.",
+          "parameters": {
+            "properties": {
+              "path": {
+                "description": "Absolute path to the directory to list. Must be absolute, not relative.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Reads a file from the filesystem. Assume any path the user provides is valid; reading a missing file returns an error.\n\nUsage:\n- By default, it reads up to 100 lines starting from the beginning of the file. Use `offset`/`limit` to page through large files instead of reading them whole.\n- A status header, `@@ field | field | ... @@`, sits above the file content, and every line after it is verbatim file content. When content is truncated, there may be an explanation before the header. Never include the header when editing.\n- Speculatively batch multiple `read_file` calls in one response when several files may be useful.\n- An empty file returns a system-reminder warning in place of contents.\n- Large tool results may be offloaded to a file; the tool message gives the path. Read that path here, paging with `offset`/`limit`.\n- Images (`.png`, `.jpg`, etc.), audio, video, and PDFs return multimodal content blocks (https://docs.langchain.com/oss/python/langchain/messages#multimodal).\n- For images and PDFs, pagination via `offset`/`limit` is text-only - supply `file_path` only\n- Always read a file before editing it.",
+          "parameters": {
+            "properties": {
+              "file_path": {
+                "description": "Absolute path to the file to read. Must be absolute, not relative.",
+                "type": "string"
+              },
+              "offset": {
+                "default": 0,
+                "description": "Line number to start reading from (0-indexed). Use for pagination of large files.",
+                "type": "integer"
+              },
+              "limit": {
+                "default": 100,
+                "description": "Maximum number of lines to read. Use for pagination of large files.",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "file_path"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "write_file",
+          "description": "Writes content to a file. Creates the file if it does not exist; replaces it entirely if it does.\n\nUsage:\n- Use this tool when you intend to create a new file or replace the whole file. You do not need to read the file first.\n- Prefer to edit existing files (with the edit_file tool) over creating new ones when possible.",
+          "parameters": {
+            "properties": {
+              "file_path": {
+                "description": "Absolute path where the file should be written. Must be absolute, not relative.",
+                "type": "string"
+              },
+              "content": {
+                "description": "The text content to write to the file. This parameter is required.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "file_path",
+              "content"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "edit_file",
+          "description": "Performs exact string replacements in files.\n\nUsage:\n- You must read the file before editing; this tool errors otherwise.\n- Preserve the exact source indentation from the read output, and never include the read status header in old_string or new_string.\n- Prefer editing an existing file over creating a new one.\n- Only use emojis if the user explicitly requests it.",
+          "parameters": {
+            "properties": {
+              "file_path": {
+                "description": "Absolute path to the file to edit. Must be absolute, not relative.",
+                "type": "string"
+              },
+              "old_string": {
+                "description": "The exact text to find and replace. Must be unique in the file unless replace_all is True.",
+                "type": "string"
+              },
+              "new_string": {
+                "description": "The text to replace old_string with. Must be different from old_string.",
+                "type": "string"
+              },
+              "replace_all": {
+                "default": false,
+                "description": "If True, replace all occurrences of old_string. If False (default), old_string must be unique.",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "file_path",
+              "old_string",
+              "new_string"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "delete",
+          "description": "Deletes a file or directory from the filesystem.\n\nUsage:\n- Permanently removes the file or directory at the given absolute path.\n- Deleting a directory removes it and everything inside it, recursively. Prefer\n  deleting a directory in one call over deleting each file individually.\n- This cannot be undone, so only delete paths you are sure are no longer needed.",
+          "parameters": {
+            "properties": {
+              "file_path": {
+                "description": "Absolute path to the file to delete. Must be absolute, not relative.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "file_path"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "glob",
+          "description": "Find files matching a glob pattern, returning absolute paths.\n\nSupports `*` (any characters within a path segment), `**` (any directories), `?` (single character), `[abc]` (one character from a set), and `{a,b}` (alternatives), e.g. `*.py`, `src/**/*.py`, `*.{yml,yaml}`.\n\nA pattern without `/` matches the file name at any depth under the search root (`*.py` matches `src/app/main.py`). A pattern containing `/` matches the search-root-relative path (`src/**/*.py`). A leading `/` anchors to the search root (`/*.py` matches only top-level Python files).\n\nLeading-dot names are only matched when the pattern segment itself starts with `.` (use `.env`, or `.github/**/*.yml`). Because `**` will not descend into dot-directories, the bare form `*.yml` is *broader* than `**/*.yml` and is usually what you want.",
+          "parameters": {
+            "properties": {
+              "pattern": {
+                "description": "Glob pattern to match files (e.g., '*.py', '**/*.py', '/subdir/**/*.md'). A pattern without '/' matches the file name at any depth; a pattern containing '/' matches the search-root-relative path; a leading '/' anchors to the search root ('/*.py' matches only top-level files). Leading-dot names are excluded unless the pattern segment starts with '.', so prefer the bare form '*.py' over '**/*.py' -- '**' will not descend into dot-directories like '.github'.",
+                "type": "string"
+              },
+              "path": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Base directory to search from. Defaults to the backend's default root."
+              }
+            },
+            "required": [
+              "pattern"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "grep",
+          "description": "Search for a LITERAL text pattern across files (NOT regex).\n\nThe pattern is matched verbatim: regex metacharacters are ordinary characters, not operators. To match any of several strings, run a separate grep for each; `grep(pattern=\"foo|bar\")` searches for the literal text \"foo|bar\", and `.*` or `\\.` match those characters literally.\n\nReturns matching files or content per `output_mode`. Offloaded large tool results live under the artifacts root (`/large_tool_results/` by default); grep that directory to search them when you do not know the exact path.",
+          "parameters": {
+            "properties": {
+              "pattern": {
+                "description": "Text pattern to search for (literal string, not regex).",
+                "type": "string"
+              },
+              "path": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Directory to search in. Defaults to current working directory."
+              },
+              "glob": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Glob pattern (NOT regex) limiting which files are searched (e.g. '*.py', '*.ts'). A pattern without '/' matches the file name at any depth; a pattern containing '/' matches the search-root-relative path (e.g. 'src/**/*.py'). This is an in-tool file filter, not a call to the separate glob tool. Brace expansion (e.g. '*.{ts,tsx}') is not supported on all backends; run a separate search per extension for reliable results."
+              },
+              "output_mode": {
+                "default": "files_with_matches",
+                "description": "Shape of the returned text. 'files_with_matches' (default): newline-separated matching file paths. 'content': matching lines grouped by file under a '<path>:' header, each line indented and formatted '<line_number>: <line text>' (only the matched line, no surrounding context). 'count': one '<path>: <match_count>' line per file.",
+                "enum": [
+                  "files_with_matches",
+                  "content",
+                  "count"
+                ],
+                "type": "string"
+              },
+              "max_count": {
+                "anyOf": [
+                  {
+                    "exclusiveMinimum": 0,
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optional cap on the total number of matches returned across all files. Leave unset to use the configured default. When the cap is hit, results are truncated and a note says so; narrow the pattern or path to see the rest."
+              }
+            },
+            "required": [
+              "pattern"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "task",
+          "description": "Launch an ephemeral subagent to handle a complex, multi-step task.\n\nAvailable agent types and the tools they have access to:\n- general-purpose: General-purpose agent for researching complex questions, searching for files and content, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you. This agent has access to all tools as the main agent.\n\nSpecify subagent_type to select the agent. Usage notes:\n- Launch multiple agents concurrently when their tasks are independent, using a single message with multiple tool calls.\n- Each invocation is stateless by default: the agent sees only the prompt you give it and returns a single final report. Put full detail in the prompt and state exactly what it should return — unless an agent type below says it inherits your conversation instead.\n- The agent's report is not shown to the user; relay a summary yourself.\n- Tell the agent whether to create content, analyze, or only research, since it can't necessarily see the user's intent unless it inherits your conversation, as noted per agent type below.\n- If an agent's description says to use it proactively, do so without waiting to be asked.\n- When only general-purpose is available, use it for any complex, context-heavy task; it has the same capabilities as the main agent.",
+          "parameters": {
+            "properties": {
+              "description": {
+                "description": "A detailed description of the task for the subagent to perform autonomously. Include all necessary context and specify the expected output format.",
+                "type": "string"
+              },
+              "subagent_type": {
+                "description": "The type of subagent to use. Must be one of the available agent types listed in the tool description.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "description",
+              "subagent_type"
+            ],
+            "type": "object"
+          }
+        }
+      }
+    ],
+    "tool_choice": "none"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1790034283,
+    "id": "2026092207444236800f35e7024a71",
+    "model": "glm-5.3",
+    "object": "chat.completion",
+    "request_id": "2026092207444236800f35e7024a71",
+    "usage": {
+      "completion_tokens": 45,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 2460,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2505
+    }
+  },
+  "http_status": 200
+}

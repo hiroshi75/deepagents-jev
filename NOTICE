@@ -1,0 +1,13 @@
+deepagents-jev is an independent project, not affiliated with or endorsed by
+LangChain, TypeSafe, Z.ai, or Anthropic.
+
+The recorded benchmark datasets and request/response records contain excerpts
+from LangChain Deep Agents at revision 11c7669f5dddd472bdbf20c97bf4507f365e002b.
+Those excerpts are Copyright (c) LangChain, Inc. and licensed under the MIT
+License reproduced in LICENSES/DeepAgents-MIT.txt. File paths and line ranges
+are retained in the datasets. Provider responses remain identified as such.
+
+Conceptual inspiration:
+https://x.com/CompleteSkeptic/status/2101894250401271876
+https://docs.google.com/document/d/1G61uUB0FifUnmmrPzFQojZ3KpczYKmXGpgEXDJ2l_Zg/edit
+The linked memo is credited, not reproduced or relicensed here.

@@ -1,0 +1,175 @@
+{
+  "condition": "full",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```json\n{\n  \"lease_seconds\": 194,\n  \"max_payload_bytes\": 534287,\n  \"release_tag\": \"build-945876-ori\",\n  \"owner_team\": \"team-411\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 4.61774770898046,
+      "estimated_usd": 1.1057545,
+      "uncached_usd": 0.902495
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```json\n{\n  \"lease_seconds\": 154,\n  \"max_payload_bytes\": 403695,\n  \"release_tag\": \"build-283173-lyr\",\n  \"owner_team\": \"team-885\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.9088034160085954,
+      "estimated_usd": 0.09286725,
+      "uncached_usd": 0.903345
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```json\n{\n  \"lease_seconds\": 241,\n  \"max_payload_bytes\": 838429,\n  \"release_tag\": \"build-666425-veg\",\n  \"owner_team\": \"team-778\"\n}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 1.730971499986481,
+      "estimated_usd": 0.09292475,
+      "uncached_usd": 0.904145
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "full",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 176338,
+        "cache_read_input_tokens": 3814,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 176338,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 4.602262582979165,
+      "estimated_usd": 1.1057545,
+      "uncached_usd": 0.902495,
+      "raw_file": "call_001_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 2,
+      "condition": "full",
+      "turn": 2,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 165,
+        "cache_read_input_tokens": 180152,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 165,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 70,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.895215917029418,
+      "estimated_usd": 0.09286725,
+      "uncached_usd": 0.903345,
+      "raw_file": "call_002_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 3,
+      "condition": "full",
+      "turn": 3,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 165,
+        "cache_read_input_tokens": 180317,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 165,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 1.7173512080335058,
+      "estimated_usd": 0.09292475,
+      "uncached_usd": 0.904145,
+      "raw_file": "call_003_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    }
+  ],
+  "elapsed_seconds": 8.258099083031993,
+  "estimated_usd": 1.2915465,
+  "uncached_usd": 2.709985,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": []
+}

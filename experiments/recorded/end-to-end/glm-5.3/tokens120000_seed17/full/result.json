@@ -1,0 +1,1969 @@
+{
+  "condition": "full",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-411\"\n    release_tag = \"build-945876-ori\"\n    if payload_bytes < 0 or age_seconds < 0:\n        return {\"accepted\": False, \"reason\": \"invalid\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif payload_bytes > 534287:\n        return {\"accepted\": False, \"reason\": \"too_large\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif age_seconds >= 194:\n        return {\"accepted\": False, \"reason\": \"expired\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    else:\n        return {\"accepted\": True, \"reason\": \"ok\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              193
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              195
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              267143,
+              97
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              193
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              845546,
+              204
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              617343,
+              126
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              640593,
+              23
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              202739,
+              135
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              112848,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              518371,
+              375
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              407582,
+              345
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              198268,
+              298
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              762328,
+              235
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              355916,
+              234
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              530064,
+              387
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              703795,
+              296
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              759337,
+              71
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              193931,
+              325
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              629273,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              127194,
+              146
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              606831,
+              228
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              682032,
+              119
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              158596,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              484557,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 6.882448124990333,
+      "estimated_usd": 0.14796624000000003,
+      "uncached_usd": 0.14803919999999998
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-885\"\n    release_tag = \"build-283173-lyr\"\n    if payload_bytes < 0 or age_seconds < 0:\n        return {\"accepted\": False, \"reason\": \"invalid\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif payload_bytes > 403695:\n        return {\"accepted\": False, \"reason\": \"too_large\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif age_seconds >= 154:\n        return {\"accepted\": False, \"reason\": \"expired\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    else:\n        return {\"accepted\": True, \"reason\": \"ok\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              153
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              155
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              201847,
+              77
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              153
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              460938,
+              150
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              765428,
+              290
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              620487,
+              180
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              114232,
+              130
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              214004,
+              96
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              617015,
+              101
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              197961,
+              41
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              719781,
+              58
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              676690,
+              138
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              734335,
+              230
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              728830,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              461852,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              749743,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              386027,
+              139
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              269326,
+              143
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              732551,
+              237
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              278634,
+              304
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              355131,
+              211
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              761565,
+              28
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              98377,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 3.799476040992886,
+      "estimated_usd": 0.02867304,
+      "uncached_usd": 0.1484004
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-778\"\n    release_tag = \"build-666425-veg\"\n    if payload_bytes < 0 or age_seconds < 0:\n        return {\"accepted\": False, \"reason\": \"invalid\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif payload_bytes > 838429:\n        return {\"accepted\": False, \"reason\": \"too_large\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    elif age_seconds >= 241:\n        return {\"accepted\": False, \"reason\": \"expired\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n    else:\n        return {\"accepted\": True, \"reason\": \"ok\", \"owner_team\": owner_team, \"release_tag\": release_tag}\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              240
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              242
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              419214,
+              120
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              240
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              553504,
+              218
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1202176,
+              395
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              408153,
+              323
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              343538,
+              262
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              30771,
+              407
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              688742,
+              120
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1080878,
+              181
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1067057,
+              26
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              853265,
+              362
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              853925,
+              217
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1082436,
+              288
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              691619,
+              358
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1282775,
+              203
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              344468,
+              276
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1238493,
+              136
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              593002,
+              1
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              133235,
+              415
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1313666,
+              324
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              968108,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              730434,
+              270
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 3.5394073750358075,
+      "estimated_usd": 0.028753480000000005,
+      "uncached_usd": 0.14891859999999998
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "full",
+      "turn": 1,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 219,
+        "completion_tokens_details": {
+          "reasoning_tokens": 34
+        },
+        "prompt_tokens": 105054,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 105273
+      },
+      "elapsed_seconds": 6.8500922080129385,
+      "estimated_usd": 0.14796624000000003,
+      "uncached_usd": 0.14803919999999998,
+      "raw_file": "call_001_zai_answer.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 2,
+      "condition": "full",
+      "turn": 2,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 184,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 105422,
+        "prompt_tokens_details": {
+          "cached_tokens": 105024
+        },
+        "total_tokens": 105606
+      },
+      "elapsed_seconds": 3.7688950420124456,
+      "estimated_usd": 0.02867304,
+      "uncached_usd": 0.1484004,
+      "raw_file": "call_002_zai_answer.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 3,
+      "condition": "full",
+      "turn": 3,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 185,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 105789,
+        "prompt_tokens_details": {
+          "cached_tokens": 105408
+        },
+        "total_tokens": 105974
+      },
+      "elapsed_seconds": 3.505156665982213,
+      "estimated_usd": 0.028753480000000005,
+      "uncached_usd": 0.14891859999999998,
+      "raw_file": "call_003_zai_answer.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    }
+  ],
+  "elapsed_seconds": 14.222904875001404,
+  "estimated_usd": 0.20539276000000004,
+  "uncached_usd": 0.4453581999999999,
+  "correct_fields": 96,
+  "total_fields": 96,
+  "selections": []
+}

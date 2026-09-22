@@ -1,0 +1,2162 @@
+{
+  "glm-5.3": {
+    "methods": {
+      "full": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 0.59029076,
+        "cost_per_correct_answer_usd": 0.04919089666666667
+      },
+      "jev": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 0.059991362,
+        "cost_per_correct_answer_usd": 0.004999280166666667
+      },
+      "summarization": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 0.48431331999999994,
+        "cost_per_correct_answer_usd": 0.04035944333333333
+      }
+    },
+    "answers": [
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}\n```",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}\n```",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}\n```",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      }
+    ]
+  },
+  "claude-opus-4-8": {
+    "methods": {
+      "full": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 3.8785367499999994,
+        "cost_per_correct_answer_usd": 0.3232113958333333
+      },
+      "jev": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 0.130132412,
+        "cost_per_correct_answer_usd": 0.010844367666666667
+      },
+      "summarization": {
+        "answers": 12,
+        "correct_answers": 12,
+        "fields": 48,
+        "correct_fields": 48,
+        "parse_failures": 0,
+        "schema_failures": 0,
+        "cost_usd": 2.9079307500000002,
+        "cost_per_correct_answer_usd": 0.2423275625
+      }
+    },
+    "answers": [
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 194,\n  \"max_payload_bytes\": 534287,\n  \"release_tag\": \"build-945876-ori\",\n  \"owner_team\": \"team-411\"\n}\n```",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 154,\n  \"max_payload_bytes\": 403695,\n  \"release_tag\": \"build-283173-lyr\",\n  \"owner_team\": \"team-885\"\n}\n```",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 241,\n  \"max_payload_bytes\": 838429,\n  \"release_tag\": \"build-666425-veg\",\n  \"owner_team\": \"team-778\"\n}\n```",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed17",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 201,\n  \"max_payload_bytes\": 179814,\n  \"release_tag\": \"build-462630-ori\",\n  \"owner_team\": \"team-713\"\n}\n```",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 277,\n  \"max_payload_bytes\": 735164,\n  \"release_tag\": \"build-402616-lyr\",\n  \"owner_team\": \"team-189\"\n}\n```",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens120000_seed29",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\n  \"lease_seconds\": 191,\n  \"max_payload_bytes\": 460516,\n  \"release_tag\": \"build-512001-veg\",\n  \"owner_team\": \"team-526\"\n}\n```",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}\n```",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}\n```",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}\n```",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}\n```",
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}\n```",
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed17",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "```json\n{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}\n```",
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "full",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "jev",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 1,
+        "question": "Now consult ONLY the release ledger for service orion-auth. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 201, \"max_payload_bytes\": 179814, \"release_tag\": \"build-462630-ori\", \"owner_team\": \"team-713\"}",
+        "expected": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "actual": {
+          "lease_seconds": 201,
+          "max_payload_bytes": 179814,
+          "release_tag": "build-462630-ori",
+          "owner_team": "team-713"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 2,
+        "question": "Now consult ONLY the release ledger for service lyra-search. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 277, \"max_payload_bytes\": 735164, \"release_tag\": \"build-402616-lyr\", \"owner_team\": \"team-189\"}",
+        "expected": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "actual": {
+          "lease_seconds": 277,
+          "max_payload_bytes": 735164,
+          "release_tag": "build-402616-lyr",
+          "owner_team": "team-189"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      },
+      {
+        "case": "tokens60000_seed29",
+        "method": "summarization",
+        "turn": 3,
+        "question": "Now consult ONLY the release ledger for service vega-export. Return its exact lease_seconds, max_payload_bytes, release_tag and owner_team. Use a JSON object with exactly those four keys. No tools or explanation. If a value is unavailable, use null instead of guessing.",
+        "answer": "{\"lease_seconds\": 191, \"max_payload_bytes\": 460516, \"release_tag\": \"build-512001-veg\", \"owner_team\": \"team-526\"}",
+        "expected": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "actual": {
+          "lease_seconds": 191,
+          "max_payload_bytes": 460516,
+          "release_tag": "build-512001-veg",
+          "owner_team": "team-526"
+        },
+        "parsed": true,
+        "exact_schema": true,
+        "correct_fields": 4,
+        "field_results": {
+          "lease_seconds": true,
+          "max_payload_bytes": true,
+          "release_tag": true,
+          "owner_team": true
+        },
+        "fully_correct": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "condition": "full",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```json\n{\"lease_seconds\": 194, \"max_payload_bytes\": 534287, \"release_tag\": \"build-945876-ori\", \"owner_team\": \"team-411\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "actual": {
+          "lease_seconds": 194,
+          "max_payload_bytes": 534287,
+          "release_tag": "build-945876-ori",
+          "owner_team": "team-411"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 3.0792492090258747,
+      "estimated_usd": 0.07541844,
+      "uncached_usd": 0.0754914
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```json\n{\"lease_seconds\": 154, \"max_payload_bytes\": 403695, \"release_tag\": \"build-283173-lyr\", \"owner_team\": \"team-885\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "actual": {
+          "lease_seconds": 154,
+          "max_payload_bytes": 403695,
+          "release_tag": "build-283173-lyr",
+          "owner_team": "team-885"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 2.7378647080040537,
+      "estimated_usd": 0.014408760000000001,
+      "uncached_usd": 0.0756222
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```json\n{\"lease_seconds\": 241, \"max_payload_bytes\": 838429, \"release_tag\": \"build-666425-veg\", \"owner_team\": \"team-778\"}\n```",
+      "grade": {
+        "expected": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "actual": {
+          "lease_seconds": 241,
+          "max_payload_bytes": 838429,
+          "release_tag": "build-666425-veg",
+          "owner_team": "team-778"
+        },
+        "correct_fields": 4,
+        "total_fields": 4
+      },
+      "elapsed_seconds": 4.341888249968179,
+      "estimated_usd": 0.01441424,
+      "uncached_usd": 0.07577360000000001
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "full",
+      "turn": 1,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 52,
+        "completion_tokens_details": {
+          "reasoning_tokens": 3
+        },
+        "prompt_tokens": 53759,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 53811
+      },
+      "elapsed_seconds": 3.0722988339839503,
+      "estimated_usd": 0.07541844,
+      "uncached_usd": 0.0754914,
+      "raw_file": "call_001_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 2,
+      "condition": "full",
+      "turn": 2,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 48,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 53865,
+        "prompt_tokens_details": {
+          "cached_tokens": 53696
+        },
+        "total_tokens": 53913
+      },
+      "elapsed_seconds": 2.7328590000397526,
+      "estimated_usd": 0.014408760000000001,
+      "uncached_usd": 0.0756222,
+      "raw_file": "call_002_zai_answer.json",
+      "http_status": 200
+    },
+    {
+      "call": 3,
+      "condition": "full",
+      "turn": 3,
+      "provider": "zai",
+      "stage": "answer",
+      "model": "glm-5.3",
+      "usage": {
+        "completion_tokens": 49,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 53970,
+        "prompt_tokens_details": {
+          "cached_tokens": 53824
+        },
+        "total_tokens": 54019
+      },
+      "elapsed_seconds": 4.336299791000783,
+      "estimated_usd": 0.01441424,
+      "uncached_usd": 0.07577360000000001,
+      "raw_file": "call_003_zai_answer.json",
+      "http_status": 200
+    }
+  ],
+  "elapsed_seconds": 10.159502666967455,
+  "estimated_usd": 0.10424144,
+  "uncached_usd": 0.2268872,
+  "correct_fields": 12,
+  "total_fields": 12,
+  "selections": []
+}

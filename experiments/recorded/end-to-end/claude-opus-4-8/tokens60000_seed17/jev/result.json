@@ -1,0 +1,3884 @@
+{
+  "condition": "jev",
+  "turns": [
+    {
+      "turn": 1,
+      "service": "orion-auth",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-411\"\n    release_tag = \"build-945876-ori\"\n    max_payload_bytes = 534287\n    lease_seconds = 194\n    if payload_bytes < 0 or age_seconds < 0:\n        accepted = False\n        reason = \"invalid\"\n    elif payload_bytes > max_payload_bytes:\n        accepted = False\n        reason = \"too_large\"\n    elif age_seconds >= lease_seconds:\n        accepted = False\n        reason = \"expired\"\n    else:\n        accepted = True\n        reason = \"ok\"\n    return {\n        \"accepted\": accepted,\n        \"reason\": reason,\n        \"owner_team\": owner_team,\n        \"release_tag\": release_tag,\n    }\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              193
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534288,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              194
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              534287,
+              195
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              267143,
+              97
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              193
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              845546,
+              204
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              617343,
+              126
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              640593,
+              23
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              202739,
+              135
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              112848,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              518371,
+              375
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              407582,
+              345
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              198268,
+              298
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              762328,
+              235
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              355916,
+              234
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              530064,
+              387
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              703795,
+              296
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              759337,
+              71
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              193931,
+              325
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              629273,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              127194,
+              146
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              606831,
+              228
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              682032,
+              119
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              158596,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              484557,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-411",
+              "release_tag": "build-945876-ori"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 8.798529583029449,
+      "estimated_usd": 0.012096434,
+      "uncached_usd": 0.033021433999999995
+    },
+    {
+      "turn": 2,
+      "service": "lyra-search",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-885\"\n    release_tag = \"build-283173-lyr\"\n    max_payload_bytes = 403695\n    lease_seconds = 154\n    if payload_bytes < 0 or age_seconds < 0:\n        accepted = False\n        reason = \"invalid\"\n    elif payload_bytes > max_payload_bytes:\n        accepted = False\n        reason = \"too_large\"\n    elif age_seconds >= lease_seconds:\n        accepted = False\n        reason = \"expired\"\n    else:\n        accepted = True\n        reason = \"ok\"\n    return {\n        \"accepted\": accepted,\n        \"reason\": reason,\n        \"owner_team\": owner_team,\n        \"release_tag\": release_tag,\n    }\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              153
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403696,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              403695,
+              155
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              201847,
+              77
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              153
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              460938,
+              150
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              765428,
+              290
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              620487,
+              180
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              114232,
+              130
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              214004,
+              96
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              617015,
+              101
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              197961,
+              41
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              719781,
+              58
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              676690,
+              138
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              734335,
+              230
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              728830,
+              257
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              461852,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              749743,
+              154
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              386027,
+              139
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              269326,
+              143
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              732551,
+              237
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              278634,
+              304
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              355131,
+              211
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              761565,
+              28
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              98377,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-885",
+              "release_tag": "build-283173-lyr"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 8.460031875001732,
+      "estimated_usd": 0.019576356,
+      "uncached_usd": 0.035200605999999995
+    },
+    {
+      "turn": 3,
+      "service": "vega-export",
+      "answer": "```python\ndef evaluate_request(payload_bytes, age_seconds):\n    owner_team = \"team-778\"\n    release_tag = \"build-666425-veg\"\n    max_payload_bytes = 838429\n    lease_seconds = 241\n    if payload_bytes < 0 or age_seconds < 0:\n        accepted = False\n        reason = \"invalid\"\n    elif payload_bytes > max_payload_bytes:\n        accepted = False\n        reason = \"too_large\"\n    elif age_seconds >= lease_seconds:\n        accepted = False\n        reason = \"expired\"\n    else:\n        accepted = True\n        reason = \"ok\"\n    return {\n        \"accepted\": accepted,\n        \"reason\": reason,\n        \"owner_team\": owner_team,\n        \"release_tag\": release_tag,\n    }\n```",
+      "grade": {
+        "valid_code": true,
+        "tests": [
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              240
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              0
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              0,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838430,
+              -1
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              -1,
+              241
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "invalid",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              838429,
+              242
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              419214,
+              120
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1,
+              240
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              553504,
+              218
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1202176,
+              395
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              408153,
+              323
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              343538,
+              262
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              30771,
+              407
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              688742,
+              120
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1080878,
+              181
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1067057,
+              26
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              853265,
+              362
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              853925,
+              217
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1082436,
+              288
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              691619,
+              358
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1282775,
+              203
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              344468,
+              276
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1238493,
+              136
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              593002,
+              1
+            ],
+            "expected": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": true,
+              "reason": "ok",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              133235,
+              415
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              1313666,
+              324
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              968108,
+              283
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "too_large",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          },
+          {
+            "input": [
+              730434,
+              270
+            ],
+            "expected": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "actual": {
+              "accepted": false,
+              "reason": "expired",
+              "owner_team": "team-778",
+              "release_tag": "build-666425-veg"
+            },
+            "passed": true
+          }
+        ],
+        "correct_fields": 32,
+        "total_fields": 32,
+        "passed_tests": 32,
+        "total_tests": 32,
+        "artifact_passed": true
+      },
+      "elapsed_seconds": 8.824730499996804,
+      "estimated_usd": 0.023027402,
+      "uncached_usd": 0.037995402000000005
+    }
+  ],
+  "events": [
+    {
+      "call": 1,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4621,
+        "output_tokens": 58
+      },
+      "elapsed_seconds": 0.9163182500051335,
+      "estimated_usd": 0.00019408200000000002,
+      "uncached_usd": 0.00019408200000000002,
+      "raw_file": "call_001_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 2,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4051,
+        "output_tokens": 40
+      },
+      "elapsed_seconds": 0.2705097919679247,
+      "estimated_usd": 0.00017014200000000003,
+      "uncached_usd": 0.00017014200000000003,
+      "raw_file": "call_002_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 3,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4094,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.24844916601432487,
+      "estimated_usd": 0.000171948,
+      "uncached_usd": 0.000171948,
+      "raw_file": "call_003_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 4,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 5096,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.24028095800895244,
+      "estimated_usd": 0.000214032,
+      "uncached_usd": 0.000214032,
+      "raw_file": "call_004_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 5,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4079,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2201679169666022,
+      "estimated_usd": 0.000171318,
+      "uncached_usd": 0.000171318,
+      "raw_file": "call_005_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 6,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3994,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22385437501361594,
+      "estimated_usd": 0.000167748,
+      "uncached_usd": 0.000167748,
+      "raw_file": "call_006_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 7,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4398,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.22672304196748883,
+      "estimated_usd": 0.000184716,
+      "uncached_usd": 0.000184716,
+      "raw_file": "call_007_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 8,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3990,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2758056669845246,
+      "estimated_usd": 0.00016758000000000002,
+      "uncached_usd": 0.00016758000000000002,
+      "raw_file": "call_008_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 9,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3920,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24711424997076392,
+      "estimated_usd": 0.00016464000000000002,
+      "uncached_usd": 0.00016464000000000002,
+      "raw_file": "call_009_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 10,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4261,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.24434537498746067,
+      "estimated_usd": 0.000178962,
+      "uncached_usd": 0.000178962,
+      "raw_file": "call_010_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 11,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3970,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.32575704203918576,
+      "estimated_usd": 0.00016674000000000002,
+      "uncached_usd": 0.00016674000000000002,
+      "raw_file": "call_011_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 12,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3597,
+        "output_tokens": 80
+      },
+      "elapsed_seconds": 0.30646766698919237,
+      "estimated_usd": 0.000151074,
+      "uncached_usd": 0.000151074,
+      "raw_file": "call_012_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 13,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4615,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.30861583398655057,
+      "estimated_usd": 0.00019383,
+      "uncached_usd": 0.00019383,
+      "raw_file": "call_013_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 14,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3742,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.3041870419983752,
+      "estimated_usd": 0.00015716400000000003,
+      "uncached_usd": 0.00015716400000000003,
+      "raw_file": "call_014_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 15,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4212,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.30672458396293223,
+      "estimated_usd": 0.00017690400000000003,
+      "uncached_usd": 0.00017690400000000003,
+      "raw_file": "call_015_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 16,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3930,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22043187503004447,
+      "estimated_usd": 0.00016506,
+      "uncached_usd": 0.00016506,
+      "raw_file": "call_016_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 17,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4352,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.22586941695772111,
+      "estimated_usd": 0.00018278400000000002,
+      "uncached_usd": 0.00018278400000000002,
+      "raw_file": "call_017_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 18,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3755,
+        "output_tokens": 80
+      },
+      "elapsed_seconds": 0.2350953330169432,
+      "estimated_usd": 0.00015771,
+      "uncached_usd": 0.00015771,
+      "raw_file": "call_018_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 19,
+      "condition": "jev",
+      "turn": 1,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 4650,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 265,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 3.4111791249597445,
+      "estimated_usd": 0.00896,
+      "uncached_usd": 0.029885,
+      "raw_file": "call_019_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 20,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4805,
+        "output_tokens": 58
+      },
+      "elapsed_seconds": 0.6743632910074666,
+      "estimated_usd": 0.00020181,
+      "uncached_usd": 0.00020181,
+      "raw_file": "call_020_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 21,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4235,
+        "output_tokens": 40
+      },
+      "elapsed_seconds": 0.21825799997895956,
+      "estimated_usd": 0.00017787,
+      "uncached_usd": 0.00017787,
+      "raw_file": "call_021_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 22,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4278,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.253943000047002,
+      "estimated_usd": 0.000179676,
+      "uncached_usd": 0.000179676,
+      "raw_file": "call_022_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 23,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3455,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22467345802579075,
+      "estimated_usd": 0.00014511000000000003,
+      "uncached_usd": 0.00014511000000000003,
+      "raw_file": "call_023_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 24,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4331,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24905479099834338,
+      "estimated_usd": 0.000181902,
+      "uncached_usd": 0.000181902,
+      "raw_file": "call_024_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 25,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4242,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23880074999760836,
+      "estimated_usd": 0.00017816400000000002,
+      "uncached_usd": 0.00017816400000000002,
+      "raw_file": "call_025_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 26,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3579,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22037762496620417,
+      "estimated_usd": 0.000150318,
+      "uncached_usd": 0.000150318,
+      "raw_file": "call_026_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 27,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3428,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24939920799806714,
+      "estimated_usd": 0.000143976,
+      "uncached_usd": 0.000143976,
+      "raw_file": "call_027_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 28,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4174,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21007420803653076,
+      "estimated_usd": 0.00017530800000000002,
+      "uncached_usd": 0.00017530800000000002,
+      "raw_file": "call_028_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 29,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4104,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2934182910248637,
+      "estimated_usd": 0.00017236800000000003,
+      "uncached_usd": 0.00017236800000000003,
+      "raw_file": "call_029_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 30,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4445,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.30628133402206004,
+      "estimated_usd": 0.00018669,
+      "uncached_usd": 0.00018669,
+      "raw_file": "call_030_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 31,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4154,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2721203750115819,
+      "estimated_usd": 0.00017446800000000002,
+      "uncached_usd": 0.00017446800000000002,
+      "raw_file": "call_031_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 32,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3781,
+        "output_tokens": 80
+      },
+      "elapsed_seconds": 0.24040158302523196,
+      "estimated_usd": 0.00015880200000000002,
+      "uncached_usd": 0.00015880200000000002,
+      "raw_file": "call_032_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 33,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4799,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.3393897079513408,
+      "estimated_usd": 0.000201558,
+      "uncached_usd": 0.000201558,
+      "raw_file": "call_033_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 34,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3926,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.37351520801894367,
+      "estimated_usd": 0.00016489200000000003,
+      "uncached_usd": 0.00016489200000000003,
+      "raw_file": "call_034_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 35,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4396,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2894164589815773,
+      "estimated_usd": 0.000184632,
+      "uncached_usd": 0.000184632,
+      "raw_file": "call_035_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 36,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4114,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.213699291984085,
+      "estimated_usd": 0.000172788,
+      "uncached_usd": 0.000172788,
+      "raw_file": "call_036_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 37,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4536,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.21151704201474786,
+      "estimated_usd": 0.000190512,
+      "uncached_usd": 0.000190512,
+      "raw_file": "call_037_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 38,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4161,
+        "output_tokens": 118
+      },
+      "elapsed_seconds": 0.25398279196815565,
+      "estimated_usd": 0.000174762,
+      "uncached_usd": 0.000174762,
+      "raw_file": "call_038_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 39,
+      "condition": "jev",
+      "turn": 2,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1231,
+        "cache_read_input_tokens": 3814,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1231,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 266,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 3.0841233340324834,
+      "estimated_usd": 0.01626075,
+      "uncached_usd": 0.031885,
+      "raw_file": "call_039_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    },
+    {
+      "call": 40,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4327,
+        "output_tokens": 40
+      },
+      "elapsed_seconds": 0.6868085419991985,
+      "estimated_usd": 0.00018173400000000002,
+      "uncached_usd": 0.00018173400000000002,
+      "raw_file": "call_040_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 41,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3338,
+        "output_tokens": 40
+      },
+      "elapsed_seconds": 0.22458391601685435,
+      "estimated_usd": 0.000140196,
+      "uncached_usd": 0.000140196,
+      "raw_file": "call_041_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 42,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4552,
+        "output_tokens": 60
+      },
+      "elapsed_seconds": 0.22415062499931082,
+      "estimated_usd": 0.00019118400000000003,
+      "uncached_usd": 0.00019118400000000003,
+      "raw_file": "call_042_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 43,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4280,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.25159183400683105,
+      "estimated_usd": 0.00017976000000000003,
+      "uncached_usd": 0.00017976000000000003,
+      "raw_file": "call_043_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 44,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3753,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22399333299836144,
+      "estimated_usd": 0.000157626,
+      "uncached_usd": 0.000157626,
+      "raw_file": "call_044_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 45,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4447,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21148316701874137,
+      "estimated_usd": 0.000186774,
+      "uncached_usd": 0.000186774,
+      "raw_file": "call_045_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 46,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4362,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.24657070799730718,
+      "estimated_usd": 0.00018320400000000002,
+      "uncached_usd": 0.00018320400000000002,
+      "raw_file": "call_046_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 47,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4766,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.28997412498574704,
+      "estimated_usd": 0.00020017200000000003,
+      "uncached_usd": 0.00020017200000000003,
+      "raw_file": "call_047_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 48,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4358,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.30634862498845905,
+      "estimated_usd": 0.000183036,
+      "uncached_usd": 0.000183036,
+      "raw_file": "call_048_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 49,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4288,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.21618475002469495,
+      "estimated_usd": 0.000180096,
+      "uncached_usd": 0.000180096,
+      "raw_file": "call_049_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 50,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4629,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.2954381660092622,
+      "estimated_usd": 0.000194418,
+      "uncached_usd": 0.000194418,
+      "raw_file": "call_050_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 51,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4338,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.22125745803350583,
+      "estimated_usd": 0.000182196,
+      "uncached_usd": 0.000182196,
+      "raw_file": "call_051_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 52,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3965,
+        "output_tokens": 80
+      },
+      "elapsed_seconds": 0.23158370901364833,
+      "estimated_usd": 0.00016653,
+      "uncached_usd": 0.00016653,
+      "raw_file": "call_052_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 53,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4983,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.26040912501048297,
+      "estimated_usd": 0.000209286,
+      "uncached_usd": 0.000209286,
+      "raw_file": "call_053_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 54,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4110,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.21328966598957777,
+      "estimated_usd": 0.00017262,
+      "uncached_usd": 0.00017262,
+      "raw_file": "call_054_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 55,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4580,
+        "output_tokens": 61
+      },
+      "elapsed_seconds": 0.25402254197979346,
+      "estimated_usd": 0.00019236,
+      "uncached_usd": 0.00019236,
+      "raw_file": "call_055_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 56,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4298,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.2763966249767691,
+      "estimated_usd": 0.00018051600000000003,
+      "uncached_usd": 0.00018051600000000003,
+      "raw_file": "call_056_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 57,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4104,
+        "output_tokens": 42
+      },
+      "elapsed_seconds": 0.23353179200785235,
+      "estimated_usd": 0.00017236800000000003,
+      "uncached_usd": 0.00017236800000000003,
+      "raw_file": "call_057_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 58,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 4739,
+        "output_tokens": 99
+      },
+      "elapsed_seconds": 0.2386726659606211,
+      "estimated_usd": 0.00019903800000000001,
+      "uncached_usd": 0.00019903800000000001,
+      "raw_file": "call_058_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 59,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "jev",
+      "stage": "selection",
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1364,
+        "output_tokens": 82
+      },
+      "elapsed_seconds": 0.21185720904031768,
+      "estimated_usd": 5.7288000000000004e-05,
+      "uncached_usd": 5.7288000000000004e-05,
+      "raw_file": "call_059_jev_selection.json",
+      "http_status": 200,
+      "stop_reason": null,
+      "stop_details": null
+    },
+    {
+      "call": 60,
+      "condition": "jev",
+      "turn": 3,
+      "provider": "anthropic",
+      "stage": "answer",
+      "model": "claude-opus-4-8",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1756,
+        "cache_read_input_tokens": 3814,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 1756,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 265,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "elapsed_seconds": 3.4566024590167217,
+      "estimated_usd": 0.019517,
+      "uncached_usd": 0.034485,
+      "raw_file": "call_060_anthropic_answer.json",
+      "http_status": 200,
+      "stop_reason": "end_turn",
+      "stop_details": null
+    }
+  ],
+  "elapsed_seconds": 26.085214000020642,
+  "estimated_usd": 0.054700192,
+  "uncached_usd": 0.106217442,
+  "correct_fields": 96,
+  "total_fields": 96,
+  "selections": [
+    {
+      "before_tokens": 62587,
+      "after_tokens": 568,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_13",
+        "fragment_77",
+        "fragment_98",
+        "fragment_99",
+        "fragment_100",
+        "fragment_101",
+        "fragment_102",
+        "fragment_103"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_11",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_41",
+        "fragment_43",
+        "fragment_45",
+        "fragment_47",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_67",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85",
+        "fragment_87",
+        "fragment_89",
+        "fragment_91",
+        "fragment_93",
+        "fragment_95",
+        "fragment_97"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.04
+        ],
+        [
+          "fragment_3",
+          0.04
+        ],
+        [
+          "fragment_5",
+          0.03
+        ],
+        [
+          "fragment_7",
+          0.04
+        ],
+        [
+          "fragment_9",
+          0.04
+        ],
+        [
+          "fragment_11",
+          0.04
+        ],
+        [
+          "fragment_13",
+          0.98
+        ],
+        [
+          "fragment_15",
+          0.04
+        ],
+        [
+          "fragment_17",
+          0.04
+        ],
+        [
+          "fragment_19",
+          0.03
+        ],
+        [
+          "fragment_21",
+          0.03
+        ],
+        [
+          "fragment_23",
+          0.04
+        ],
+        [
+          "fragment_25",
+          0.04
+        ],
+        [
+          "fragment_27",
+          0.03
+        ],
+        [
+          "fragment_29",
+          0.03
+        ],
+        [
+          "fragment_31",
+          0.03
+        ],
+        [
+          "fragment_33",
+          0.03
+        ],
+        [
+          "fragment_35",
+          0.03
+        ],
+        [
+          "fragment_37",
+          0.03
+        ],
+        [
+          "fragment_39",
+          0.03
+        ],
+        [
+          "fragment_41",
+          0.03
+        ],
+        [
+          "fragment_43",
+          0.03
+        ],
+        [
+          "fragment_45",
+          0.03
+        ],
+        [
+          "fragment_47",
+          0.19
+        ],
+        [
+          "fragment_49",
+          0.03
+        ],
+        [
+          "fragment_51",
+          0.03
+        ],
+        [
+          "fragment_53",
+          0.03
+        ],
+        [
+          "fragment_55",
+          0.03
+        ],
+        [
+          "fragment_57",
+          0.04
+        ],
+        [
+          "fragment_59",
+          0.04
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.03
+        ],
+        [
+          "fragment_65",
+          0.03
+        ],
+        [
+          "fragment_67",
+          0.03
+        ],
+        [
+          "fragment_69",
+          0.03
+        ],
+        [
+          "fragment_71",
+          0.03
+        ],
+        [
+          "fragment_73",
+          0.03
+        ],
+        [
+          "fragment_75",
+          0.03
+        ],
+        [
+          "fragment_77",
+          0.23
+        ],
+        [
+          "fragment_79",
+          0.03
+        ],
+        [
+          "fragment_81",
+          0.04
+        ],
+        [
+          "fragment_83",
+          0.04
+        ],
+        [
+          "fragment_85",
+          0.03
+        ],
+        [
+          "fragment_87",
+          0.04
+        ],
+        [
+          "fragment_89",
+          0.03
+        ],
+        [
+          "fragment_91",
+          0.03
+        ],
+        [
+          "fragment_93",
+          0.03
+        ],
+        [
+          "fragment_95",
+          0.04
+        ],
+        [
+          "fragment_97",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    },
+    {
+      "before_tokens": 62991,
+      "after_tokens": 847,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_47",
+        "fragment_100",
+        "fragment_101",
+        "fragment_102",
+        "fragment_103",
+        "fragment_104",
+        "fragment_105"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_11",
+        "fragment_13",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_41",
+        "fragment_43",
+        "fragment_45",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_67",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_77",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85",
+        "fragment_87",
+        "fragment_89",
+        "fragment_91",
+        "fragment_93",
+        "fragment_95",
+        "fragment_97",
+        "fragment_98",
+        "fragment_99"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.05
+        ],
+        [
+          "fragment_3",
+          0.04
+        ],
+        [
+          "fragment_5",
+          0.04
+        ],
+        [
+          "fragment_7",
+          0.05
+        ],
+        [
+          "fragment_9",
+          0.04
+        ],
+        [
+          "fragment_11",
+          0.05
+        ],
+        [
+          "fragment_13",
+          0.18
+        ],
+        [
+          "fragment_15",
+          0.05
+        ],
+        [
+          "fragment_17",
+          0.05
+        ],
+        [
+          "fragment_19",
+          0.04
+        ],
+        [
+          "fragment_21",
+          0.04
+        ],
+        [
+          "fragment_23",
+          0.05
+        ],
+        [
+          "fragment_25",
+          0.05
+        ],
+        [
+          "fragment_27",
+          0.04
+        ],
+        [
+          "fragment_29",
+          0.04
+        ],
+        [
+          "fragment_31",
+          0.04
+        ],
+        [
+          "fragment_33",
+          0.04
+        ],
+        [
+          "fragment_35",
+          0.04
+        ],
+        [
+          "fragment_37",
+          0.04
+        ],
+        [
+          "fragment_39",
+          0.04
+        ],
+        [
+          "fragment_41",
+          0.03
+        ],
+        [
+          "fragment_43",
+          0.03
+        ],
+        [
+          "fragment_45",
+          0.04
+        ],
+        [
+          "fragment_47",
+          0.97
+        ],
+        [
+          "fragment_49",
+          0.04
+        ],
+        [
+          "fragment_51",
+          0.04
+        ],
+        [
+          "fragment_53",
+          0.04
+        ],
+        [
+          "fragment_55",
+          0.04
+        ],
+        [
+          "fragment_57",
+          0.05
+        ],
+        [
+          "fragment_59",
+          0.04
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.04
+        ],
+        [
+          "fragment_65",
+          0.04
+        ],
+        [
+          "fragment_67",
+          0.04
+        ],
+        [
+          "fragment_69",
+          0.03
+        ],
+        [
+          "fragment_71",
+          0.03
+        ],
+        [
+          "fragment_73",
+          0.03
+        ],
+        [
+          "fragment_75",
+          0.04
+        ],
+        [
+          "fragment_77",
+          0.15
+        ],
+        [
+          "fragment_79",
+          0.04
+        ],
+        [
+          "fragment_81",
+          0.06
+        ],
+        [
+          "fragment_83",
+          0.04
+        ],
+        [
+          "fragment_85",
+          0.04
+        ],
+        [
+          "fragment_87",
+          0.05
+        ],
+        [
+          "fragment_89",
+          0.04
+        ],
+        [
+          "fragment_91",
+          0.04
+        ],
+        [
+          "fragment_93",
+          0.04
+        ],
+        [
+          "fragment_95",
+          0.05
+        ],
+        [
+          "fragment_97",
+          0.04
+        ],
+        [
+          "fragment_98",
+          0.04
+        ],
+        [
+          "fragment_99",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    },
+    {
+      "before_tokens": 63395,
+      "after_tokens": 1209,
+      "kept_fragments": [
+        "fragment_0",
+        "fragment_77",
+        "fragment_102",
+        "fragment_103",
+        "fragment_104",
+        "fragment_105",
+        "fragment_106",
+        "fragment_107"
+      ],
+      "omitted_fragments": [
+        "fragment_1",
+        "fragment_3",
+        "fragment_5",
+        "fragment_7",
+        "fragment_9",
+        "fragment_11",
+        "fragment_13",
+        "fragment_15",
+        "fragment_17",
+        "fragment_19",
+        "fragment_21",
+        "fragment_23",
+        "fragment_25",
+        "fragment_27",
+        "fragment_29",
+        "fragment_31",
+        "fragment_33",
+        "fragment_35",
+        "fragment_37",
+        "fragment_39",
+        "fragment_41",
+        "fragment_43",
+        "fragment_45",
+        "fragment_47",
+        "fragment_49",
+        "fragment_51",
+        "fragment_53",
+        "fragment_55",
+        "fragment_57",
+        "fragment_59",
+        "fragment_61",
+        "fragment_63",
+        "fragment_65",
+        "fragment_67",
+        "fragment_69",
+        "fragment_71",
+        "fragment_73",
+        "fragment_75",
+        "fragment_79",
+        "fragment_81",
+        "fragment_83",
+        "fragment_85",
+        "fragment_87",
+        "fragment_89",
+        "fragment_91",
+        "fragment_93",
+        "fragment_95",
+        "fragment_97",
+        "fragment_98",
+        "fragment_99",
+        "fragment_100",
+        "fragment_101"
+      ],
+      "scores": [
+        [
+          "fragment_1",
+          0.05
+        ],
+        [
+          "fragment_3",
+          0.05
+        ],
+        [
+          "fragment_5",
+          0.03
+        ],
+        [
+          "fragment_7",
+          0.04
+        ],
+        [
+          "fragment_9",
+          0.04
+        ],
+        [
+          "fragment_11",
+          0.05
+        ],
+        [
+          "fragment_13",
+          0.17
+        ],
+        [
+          "fragment_15",
+          0.05
+        ],
+        [
+          "fragment_17",
+          0.05
+        ],
+        [
+          "fragment_19",
+          0.03
+        ],
+        [
+          "fragment_21",
+          0.04
+        ],
+        [
+          "fragment_23",
+          0.04
+        ],
+        [
+          "fragment_25",
+          0.04
+        ],
+        [
+          "fragment_27",
+          0.04
+        ],
+        [
+          "fragment_29",
+          0.04
+        ],
+        [
+          "fragment_31",
+          0.03
+        ],
+        [
+          "fragment_33",
+          0.04
+        ],
+        [
+          "fragment_35",
+          0.03
+        ],
+        [
+          "fragment_37",
+          0.04
+        ],
+        [
+          "fragment_39",
+          0.03
+        ],
+        [
+          "fragment_41",
+          0.03
+        ],
+        [
+          "fragment_43",
+          0.03
+        ],
+        [
+          "fragment_45",
+          0.04
+        ],
+        [
+          "fragment_47",
+          0.18
+        ],
+        [
+          "fragment_49",
+          0.04
+        ],
+        [
+          "fragment_51",
+          0.04
+        ],
+        [
+          "fragment_53",
+          0.04
+        ],
+        [
+          "fragment_55",
+          0.04
+        ],
+        [
+          "fragment_57",
+          0.04
+        ],
+        [
+          "fragment_59",
+          0.04
+        ],
+        [
+          "fragment_61",
+          0.04
+        ],
+        [
+          "fragment_63",
+          0.03
+        ],
+        [
+          "fragment_65",
+          0.04
+        ],
+        [
+          "fragment_67",
+          0.04
+        ],
+        [
+          "fragment_69",
+          0.03
+        ],
+        [
+          "fragment_71",
+          0.03
+        ],
+        [
+          "fragment_73",
+          0.03
+        ],
+        [
+          "fragment_75",
+          0.04
+        ],
+        [
+          "fragment_77",
+          0.97
+        ],
+        [
+          "fragment_79",
+          0.04
+        ],
+        [
+          "fragment_81",
+          0.05
+        ],
+        [
+          "fragment_83",
+          0.04
+        ],
+        [
+          "fragment_85",
+          0.04
+        ],
+        [
+          "fragment_87",
+          0.04
+        ],
+        [
+          "fragment_89",
+          0.04
+        ],
+        [
+          "fragment_91",
+          0.04
+        ],
+        [
+          "fragment_93",
+          0.04
+        ],
+        [
+          "fragment_95",
+          0.04
+        ],
+        [
+          "fragment_97",
+          0.05
+        ],
+        [
+          "fragment_98",
+          0.04
+        ],
+        [
+          "fragment_99",
+          0.05
+        ],
+        [
+          "fragment_100",
+          0.04
+        ],
+        [
+          "fragment_101",
+          0.04
+        ]
+      ],
+      "reason": "selected"
+    }
+  ]
+}
